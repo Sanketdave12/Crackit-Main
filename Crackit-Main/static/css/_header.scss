@@ -1,0 +1,267 @@
+header {
+  margin: 2px;
+  box-shadow: 4px 3px 14px 1px rgba(214, 214, 214, 1);
+  -webkit-box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 4px 3px 14px 1px rgba(214, 214, 214, 1);
+
+  .container {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .menuHamb{
+        display: none;
+      }
+      .hamburger {
+        display: none;
+      }
+
+      .logo {
+        font-size: 40px;
+        color: black;
+        font-weight: 600;
+        small {
+          font-size: 20px;
+          color: blue;
+        }
+      }
+      nav {
+        display: flex;
+        ul {
+          display: flex;
+          li {
+            margin-right: 30px;
+            a {
+              font-weight: 800;
+              color: black;
+              letter-spacing: 0.6px;
+            }
+          }
+        }
+      }
+      .input {
+        margin-right: 30px;
+        display: flex;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 3px 8px;
+        input {
+          border: transparent;
+          outline: none;
+          width: 300px;
+        }
+        img {
+          width: 15px;
+          height: auto;
+        }
+      }
+      .headerend {
+        display: flex;
+        img {
+          width: 30px;
+          margin-right: 10px;
+        }
+        button {
+          border: none;
+          outline: none;
+          background-color: transparent;
+          background-color: rgb(17, 14, 14);
+          color: white;
+          padding: 5px 30px;
+          border-radius: 8px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    background-color: rgb(5, 40, 55);
+    margin: 0px;
+    box-shadow: 4px 3px 14px 1px rgba(214, 214, 214, 1);
+    -webkit-box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 3px 14px 1px rgba(214, 214, 214, 1);
+    .container {
+      .header {
+        padding: 15px 15px 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menuHamb {
+          display: block;
+          .hamburger {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            span:nth-child(2n) {
+              display: block;
+              background-color: white;
+              width: 18px;
+              border-radius: 2px;
+              height: 2.5px;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 5px;
+            }
+            span:nth-child(2n + 1) {
+              border-radius: 2px;
+              display: block;
+              background-color: white;
+              width: 26px;
+              height: 2.5px;
+            }
+            span:not(last-child) {
+              margin-bottom: 5px;
+            }
+          }
+          .dropMenu {
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+            height: 15px;
+            width: 15px;
+            display: none;
+            .show {
+              display: block;
+            }
+          }
+          .hamburgerContent {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            left: 0;
+            overflow: hidden;
+            border-radius: 5px;
+            background: red;
+            display: none;
+            transition: all 0.6s ease;
+            transform: translateX(-100%);
+            
+          }
+          
+          .show {
+            display: flex;
+            transform: none;
+            transition: all 0.6s ease-in-out;
+
+            ul.service-drop {
+                display: none;
+              }
+            ul.book-list {
+                display: none;
+            }
+          }
+
+          ul.dropContent {
+            width: 100%;
+            list-style: none;
+            padding: 10px;
+            transition: all 0.3s ease;
+
+            li {
+              line-height: 55px;
+              a {
+                position: relative;
+                color: #b0b3b8;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 0 10px;
+                display: flex;
+                border-radius: 8px;
+                align-items: center;
+                text-decoration: none;
+                .icon span {
+                  line-height: 40px;
+                  font-size: 20px;
+                  color: #b0b3b8;
+                }
+                i {
+                  position: absolute;
+                  right: 10px;
+                  font-size: 25px;
+                  pointer-events: none;
+                }
+              }
+              li:hover a {
+                background: #3a3b3c;
+              }
+            }
+          }
+        }
+
+        .logo {
+          font-size: 30px;
+          color: white;
+          font-weight: 600;
+          small {
+            font-size: 20px;
+            color: white;
+          }
+        }
+        nav {
+          display: none;
+          ul {
+            display: flex;
+            li {
+              margin-right: 30px;
+              a {
+                font-weight: 800;
+                color: black;
+                letter-spacing: 0.6px;
+              }
+            }
+          }
+        }
+        .input {
+          margin-right: 0px;
+          display: flex;
+          border: 0px solid black;
+          border-radius: 10px;
+          padding: 3px 8px;
+          input {
+            border: transparent;
+            outline: none;
+            width: 10px;
+            background-color: transparent;
+          }
+          input:focus {
+            border: transparent;
+            outline: none;
+            width: 100px;
+            z-index: 99;
+            background-color: transparent;
+          }
+          img {
+            width: 15px;
+            height: auto;
+          }
+        }
+        .headerend {
+          display: flex;
+          img {
+            width: 30px;
+            margin-right: 10px;
+          }
+          button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            background-color: transparent;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+      .dropMenu {
+        width: 100%;
+      }
+    }
+  }
+}

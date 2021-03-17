@@ -1,0 +1,260 @@
+.mainCatContent {
+  .breadCrums {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    span {
+      display: flex;
+      justify-content: start;
+    }
+  }
+  .competitiveExam {
+    .examHeading {
+      height: 50px;
+      p {
+        overflow: hidden;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        margin-block-start: 0;
+        color: black;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+      }
+
+      p:before {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 34.5%;
+      }
+
+      p:before {
+        right: 0.5em;
+        margin-left: 0%;
+      }
+    }
+    .catSubContent {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 7rem;
+      .catSide {
+        display: flex;
+        flex-direction: column;
+        row-gap: 7rem;
+        white-space: nowrap;
+        .sideTopic {
+          h2 {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 0 0 10px 0;
+            font-weight: 900;
+          }
+          .topicList {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+          }
+        }
+        .otherTopic {
+          h2 {
+            border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+            padding: 0 0 10px 0;
+            font-weight: 900;
+            span {
+              -webkit-text-fill-color: white;
+              -webkit-text-stroke-width: 1px;
+              -webkit-text-stroke-color: black;
+            }
+          }
+          .otherList {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+          }
+        }
+      }
+      .allContent {
+        .poster {
+          img {
+            width: 100%;
+          }
+        }
+        .allCourses {
+          display: flex;
+          flex-direction: column;
+          row-gap: 1.5rem;
+          .allCoursesHeading {
+            padding: 20px 0 10px 0;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            h2 {
+              font-weight: 800;
+            }
+          }
+          .courseButton {
+            button {
+              border: none;
+              outline: none;
+              background-color: transparent;
+              background-color: blue;
+              color: white;
+              padding: 5px 20px;
+              font-size: 18px;
+              font-weight: 700;
+            }
+          }
+          .courseCard {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            .row1 {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .row2 {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .row3 {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .mainCatContent {
+    display: flex;
+    flex-direction: column;
+    .breadCrums {
+      display: flex;
+      align-items: center;
+      height: 100px;
+      span {
+        display: flex;
+        justify-content: start;
+      }
+    }
+    .competitiveExam {
+      display: flex;
+      flex-direction: column;
+
+      .examHeading {
+        height: 50px;
+        p {
+          overflow: hidden;
+          font-size: 25px;
+          text-align: center;
+          font-weight: 900;
+          letter-spacing: 1px;
+          margin-block-start: 0;
+          color: black;
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke-width: 1.5px;
+          -webkit-text-stroke-color: black;
+        }
+
+        p:before,p::after {
+          background-color: #000;
+          content: "";
+          display: inline-block;
+          height: 1px;
+          position: relative;
+          vertical-align: middle;
+          width: 10.5%;
+          white-space: nowrap;
+        }
+
+        p:before {
+          right: 0.5em;
+          margin-left: 0%;
+        }
+        p::after {
+          left: 0.5em;
+          margin-right: 0%;
+        }
+
+      }
+      .catSubContent {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 7rem;
+        flex-direction: column;
+        .catSide {
+          display: none;
+        }
+        .allContent {
+          .poster {
+            width: 100%;
+            img {
+            width: 100%;
+            }
+          }
+          .allCourses {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.5rem;
+            align-items: center;
+            .allCoursesHeading {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 20px 0 10px 0;
+              width: 80%;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+              h2 {
+                font-weight: 800;
+              }
+            }
+            .courseButton {
+              display: none;
+            }
+            .courseCard {
+              display: flex;
+              flex-direction: column;
+              row-gap: 2rem;
+              .row1 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                .card:not(:last-child){
+                  margin-bottom: 2rem;
+                }
+              }
+              .row2 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                 .card:not(:last-child){
+                  margin-bottom: 2rem;
+                }
+              }
+              .row3 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                 .card:not(:last-child){
+                  margin-bottom: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
