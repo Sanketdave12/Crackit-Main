@@ -1120,7 +1120,6 @@ header .container .header .headerend button {
 
 .signupPage .signupForm {
   background: white;
-  height: 75%;
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1135,7 +1134,6 @@ header .container .header .headerend button {
 }
 
 .signupPage .signupForm .up {
-  height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1219,7 +1217,6 @@ header .container .header .headerend button {
 }
 
 .signupPage .signupForm .center {
-  height: 48%;
   width: 70%;
   overflow: hidden;
   display: -webkit-box;
@@ -1291,7 +1288,6 @@ header .container .header .headerend button {
 }
 
 .signupPage .signupForm .down {
-  height: 20%;
   -webkit-margin-before: 0em;
           margin-block-start: 0em;
   width: 70%;
@@ -1838,6 +1834,784 @@ header .container .header .headerend button {
   }
   .workshopcards .card:not(:last-child) {
     margin-bottom: 20px;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.mainCourseContent {
+  background-color: gainsboro;
+}
+
+.mainCourseContent .breadCrums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+.mainCourseContent .breadCrums span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.course {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 3rem;
+}
+
+.course .courseHeading {
+  height: 50px;
+}
+
+.course .courseHeading .courseHead {
+  overflow: hidden;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+
+.course .courseHeading .courseHead span {
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+
+.course .courseHeading .courseHead:before {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 17.5%;
+}
+
+.course .courseHeading .courseHead:before {
+  right: 0.5em;
+  margin-left: 0%;
+}
+
+.course .courseHeading .teacherName {
+  line-height: 0px;
+}
+
+.course .courseHeading .teacherName:before {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 0px;
+  position: relative;
+  vertical-align: middle;
+  width: 17.5%;
+}
+
+.course .courseHeading .teacherName:before {
+  right: 0.5em;
+  margin-left: 0%;
+}
+
+.course .courseContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.course .courseContent .upContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  row-gap: 1rem;
+}
+
+.course .courseContent .upContent .upLeft {
+  width: 70%;
+  position: relative;
+}
+
+.course .courseContent .upContent .upLeft .video img {
+  width: 100%;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  bottom: 0;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons .buyButton {
+  width: 50%;
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+  font-weight: 600;
+  padding: 15px 40px 15px 40px;
+  border-radius: 10px;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons .buyButton p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons .shareButton {
+  width: 50%;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons .shareButton button {
+  background-color: blue;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 15px 0 15px 0;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons .shareButton button p {
+  -webkit-margin-before: 0em;
+          margin-block-start: 0em;
+}
+
+.course .courseContent .upContent .upLeft .videoButtons .shareButton button img {
+  width: 10%;
+}
+
+.course .courseContent .upContent .upRight {
+  width: 30%;
+}
+
+.course .courseContent .upContent .upRight .progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 0.6rem;
+  padding: 10px 20px 10px 20px;
+  overflow-y: scroll;
+  background-color: #003e5a;
+  color: white;
+  height: 60vh;
+}
+
+.course .courseContent .upContent .upRight .progress h4 {
+  border-bottom: 1px solid white;
+  padding: 0 0 5px 0;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder:not(:last-child) {
+  border-bottom: 1px solid white;
+  padding: 0px 0px 20px 0px;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 {
+  width: 90%;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader p {
+  -webkit-margin-before: 0em;
+          margin-block-start: 0em;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader img,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader img,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader img,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader img {
+  width: 40px;
+  height: 40px;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 {
+  line-height: 1.5rem;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3 .listItem,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 .listItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3 .listItem p,
+.course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 .listItem p {
+  font-size: 13px;
+  letter-spacing: 0.6px;
+}
+
+.course .courseContent .downContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.7rem;
+          column-gap: 1.7rem;
+}
+
+.course .courseContent .downContent .description {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5rem;
+  background-color: white;
+  padding: 0 20px 0 20px;
+}
+
+.course .courseContent .downContent .description .discHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #000;
+  padding: 0 0 10px 0px;
+}
+
+.course .courseContent .downContent .description .discHead p {
+  font-weight: 600;
+}
+
+.course .courseContent .downContent .description .discHead p span {
+  color: yellowgreen;
+}
+
+.course .courseContent .downContent .description .discContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2rem;
+}
+
+.course .courseContent .downContent .description .discContent p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+.course .courseContent .downContent .description .discContent .courseBy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.course .courseContent .downContent .description .discContent .courseBy .img {
+  width: 20%;
+}
+
+.course .courseContent .downContent .description .discContent .courseBy .img img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.course .courseContent .downContent .description .discContent .courseBy .text p {
+  line-height: 1rem;
+}
+
+.course .courseContent .downContent .review {
+  width: 30%;
+  height: 100vh;
+  background-color: white;
+}
+
+@media (max-width: 576px) {
+  .mainCourseContent {
+    background-color: gainsboro;
+  }
+  .mainCourseContent .breadCrums {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100px;
+  }
+  .mainCourseContent .breadCrums span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .course {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 3rem;
+  }
+  .course .courseHeading {
+    height: 50px;
+  }
+  .course .courseHeading .courseHead {
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+  }
+  .course .courseHeading .courseHead span {
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+  }
+  .course .courseHeading .courseHead:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 17.5%;
+  }
+  .course .courseHeading .courseHead:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  .course .courseHeading .teacherName {
+    line-height: 0px;
+  }
+  .course .courseHeading .teacherName:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 0px;
+    position: relative;
+    vertical-align: middle;
+    width: 17.5%;
+  }
+  .course .courseHeading .teacherName:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  .course .courseContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .course .courseContent .upContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.7rem;
+  }
+  .course .courseContent .upContent .upLeft {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    position: relative;
+    row-gap: 0.7rem;
+  }
+  .course .courseContent .upContent .upLeft .video img {
+    width: 100%;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons {
+    padding: 0 16px;
+    position: initial;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    bottom: 0;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .buyButton {
+    width: 70%;
+    font-size: 15px;
+    color: white;
+    background-color: blue;
+    font-weight: 600;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .buyButton p {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton {
+    width: 30%;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton button {
+    background-color: #11fe8c;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    width: 100%;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 15px 0 15px 0;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton button p {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    display: none;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton button img {
+    width: 30%;
+  }
+  .course .courseContent .upContent .upRight {
+    width: 100%;
+  }
+  .course .courseContent .upContent .upRight .progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.6rem;
+    padding: 10px 20px 10px 20px;
+    overflow-y: scroll;
+    background-color: #003e5a;
+    color: white;
+    height: 60vh;
+  }
+  .course .courseContent .upContent .upRight .progress h4 {
+    border-bottom: 1px solid white;
+    padding: 0 0 5px 0;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder:not(:last-child) {
+    border-bottom: 1px solid white;
+    padding: 0px 0px 20px 0px;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 {
+    width: 90%;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader p {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader img,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader img,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader img,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader img {
+    width: 40px;
+    height: 40px;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 {
+    line-height: 1.5rem;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 .listItem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 .listItem p {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+  }
+  .course .courseContent .downContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .course .courseContent .downContent .description {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+    background-color: white;
+    padding: 0 16px 16px 16px;
+  }
+  .course .courseContent .downContent .description .discHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding: 0 0 10px 0px;
+  }
+  .course .courseContent .downContent .description .discHead p {
+    font-weight: 600;
+  }
+  .course .courseContent .downContent .description .discHead p span {
+    color: yellowgreen;
+  }
+  .course .courseContent .downContent .description .discContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2rem;
+  }
+  .course .courseContent .downContent .description .discContent p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2rem;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy .img {
+    width: 20%;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy .img img {
+    border-radius: 50%;
+    width: 100%;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy .text p {
+    line-height: 1rem;
+  }
+  .course .courseContent .downContent .review {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
   }
 }
 

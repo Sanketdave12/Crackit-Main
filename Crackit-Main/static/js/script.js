@@ -34,4 +34,3 @@ service_item.onclick = () => {
     menu_bar.style.marginLeft = "0%";
     book.style.display = "none";
   };
-
