@@ -1,0 +1,205 @@
+.workshopHeadingUp {
+  margin-bottom: 3rem;
+  p {
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  p:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 15%;
+  }
+
+  p:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+}
+
+.workshopcards {
+  display: flex;
+  column-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  .card {
+    width: 300px;
+    height: fit-content;
+    background: white;
+    border-radius: 10px;
+    .workshopDate {
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      display: flex;
+      justify-content: center;
+      background: navy;
+      color: white;
+      padding: 8px 0;
+    }
+    .workshopImg {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+      }
+    }
+    .workshopDesc {
+      text-align: justify;
+      p {
+        padding: 10px 10px;
+      }
+    }
+    .workshopPrice {
+      p {
+        padding: 10px 10px;
+        font-size: 20px;
+        color: navy;
+        font-weight: 700;
+      }
+    }
+    .workshopButton {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 10px;
+      align-items: flex-end;
+      p {
+        font-size: 15px;
+        opacity: 0.8;
+      }
+      a.button {
+        background: navy;
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+        padding: 8px 25px;
+        border-radius: 10px;
+      }
+    }
+  }
+  .card:hover {
+    border-radius: 10px;
+    box-shadow: 6px 6px 19px #c5c5c5, -6px -6px 19px #fbfbfb;
+  }
+}
+
+.workshopHeadingDown {
+  margin-top: 3rem;
+  a {
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      margin-right: 0.5em;
+      border: 1px solid blue;
+      padding: 8px 25px;
+      border-radius: 10px;
+    }
+  }
+  a:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 15%;
+  }
+}
+
+@media (max-width: 768px) {
+  .workshopHeadingUp {
+    p{
+      text-align: center;
+      font-size: 6vw;
+    }
+    p:before,
+    p:after {
+      background-color: #000;
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 30vw;
+    }
+    p:after {
+      margin-left: 0.5em;
+    }
+    p:before {
+      right: 0;
+      margin-right: 0.5em;
+    }
+  }
+  .workshopcards {
+    display: flex;
+    column-gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .card:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .card{
+      .workshopDate{
+        p{
+          margin-block-start: 0em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .workshopHeadingUp {
+    p{
+      text-align: center;
+      font-size: 6vw;
+    }
+    p:before,
+    p:after {
+      background-color: #000;
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 30vw;
+    }
+    p:after {
+      margin-left: 0.5em;
+    }
+    p:before {
+      right: 0;
+      margin-right: 0.5em;
+    }
+  }
+  .workshopcards {
+    display: flex;
+    column-gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .card:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    .card{
+      .workshopDate{
+        p{
+          margin-block-start: 0em;
+        }
+      }
+    }
+  }
+}

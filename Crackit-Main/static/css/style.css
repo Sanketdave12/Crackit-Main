@@ -116,14 +116,22 @@ p {
   height: auto;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 header {
-  margin: 2px;
   box-shadow: 4px 3px 14px 1px #d6d6d6;
   -webkit-box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 4px 3px 14px 1px #d6d6d6;
 }
 
-header .container .header {
+header .header {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,48 +143,48 @@ header .container .header {
           align-items: center;
 }
 
-header .container .header .menuHamb {
+header .header .menuHamb {
   display: none;
 }
 
-header .container .header .hamburger {
+header .header .hamburger {
   display: none;
 }
 
-header .container .header .logo {
+header .header .logo {
   font-size: 40px;
   color: black;
   font-weight: 600;
 }
 
-header .container .header .logo small {
+header .header .logo small {
   font-size: 20px;
   color: blue;
 }
 
-header .container .header nav {
+header .header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .container .header nav ul {
+header .header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .container .header nav ul li {
+header .header nav ul li {
   margin-right: 30px;
 }
 
-header .container .header nav ul li a {
+header .header nav ul li a {
   font-weight: 800;
   color: black;
   letter-spacing: 0.6px;
 }
 
-header .container .header .input {
+header .header .input {
   margin-right: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,29 +194,30 @@ header .container .header .input {
   padding: 3px 8px;
 }
 
-header .container .header .input input {
+header .header .input input {
+  background-color: transparent;
   border: transparent;
   outline: none;
   width: 300px;
 }
 
-header .container .header .input img {
+header .header .input img {
   width: 15px;
   height: auto;
 }
 
-header .container .header .headerend {
+header .header .headerend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .container .header .headerend img {
+header .header .headerend img {
   width: 30px;
   margin-right: 10px;
 }
 
-header .container .header .headerend button {
+header .header .headerend button {
   border: none;
   outline: none;
   background-color: transparent;
@@ -217,6 +226,223 @@ header .container .header .headerend button {
   padding: 5px 30px;
   border-radius: 8px;
   font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  header {
+    background-color: #052837;
+    margin: 0px;
+    box-shadow: 4px 3px 14px 1px #d6d6d6;
+    -webkit-box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 3px 14px 1px #d6d6d6;
+  }
+  header .header {
+    padding: 15px 15px 10px 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header .menuHamb {
+    display: block;
+  }
+  header .header .menuHamb .hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header .menuHamb .hamburger span:nth-child(2n) {
+    display: block;
+    background-color: white;
+    width: 18px;
+    border-radius: 2px;
+    height: 2.5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 5px;
+  }
+  header .header .menuHamb .hamburger span:nth-child(2n + 1) {
+    border-radius: 2px;
+    display: block;
+    background-color: white;
+    width: 26px;
+    height: 2.5px;
+  }
+  header .header .menuHamb .hamburger span:not(last-child) {
+    margin-bottom: 5px;
+  }
+  header .header .menuHamb .dropMenu {
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+    height: 15px;
+    width: 15px;
+    display: none;
+  }
+  header .header .menuHamb .dropMenu .show {
+    display: block;
+  }
+  header .header .menuHamb .hamburgerContent {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #1b1830;
+    color: white;
+    display: none;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  header .header .menuHamb .show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: none;
+            transform: none;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+  header .header .menuHamb .show ul.service-drop {
+    display: none;
+  }
+  header .header .menuHamb .show ul.book-list {
+    display: none;
+  }
+  header .header .menuHamb ul.dropContent {
+    width: 100%;
+    list-style: none;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  header .header .menuHamb ul.dropContent li {
+    line-height: 55px;
+  }
+  header .header .menuHamb ul.dropContent li a {
+    position: relative;
+    color: #b0b3b8;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+  }
+  header .header .menuHamb ul.dropContent li a .icon span {
+    line-height: 40px;
+    font-size: 20px;
+    color: #b0b3b8;
+  }
+  header .header .menuHamb ul.dropContent li a i {
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    pointer-events: none;
+  }
+  header .header .menuHamb ul.dropContent li li:hover a {
+    background: #3a3b3c;
+  }
+  header .header .logo {
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+  }
+  header .header .logo small {
+    font-size: 20px;
+    color: white;
+  }
+  header .header nav {
+    display: none;
+  }
+  header .header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .header nav ul li {
+    margin-right: 30px;
+  }
+  header .header nav ul li a {
+    font-weight: 800;
+    color: black;
+    letter-spacing: 0.6px;
+  }
+  header .header .input {
+    margin-right: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: 0px solid black;
+    border-radius: 10px;
+    padding: 3px 8px;
+  }
+  header .header .input input {
+    border: transparent;
+    outline: none;
+    width: 10px;
+    background-color: transparent;
+  }
+  header .header .input input:focus {
+    border: transparent;
+    outline: none;
+    width: 100px;
+    z-index: 99;
+    background-color: transparent;
+  }
+  header .header .input img {
+    width: 15px;
+    height: auto;
+  }
+  header .header .headerend {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .header .headerend img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  header .header .headerend button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-color: transparent;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  header .dropMenu {
+    width: 100%;
+  }
 }
 
 @media (max-width: 576px) {
@@ -631,7 +857,7 @@ header .container .header .headerend button {
           align-items: center;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .mainCatContent {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -642,21 +868,7 @@ header .container .header .headerend button {
             flex-direction: column;
   }
   .mainCatContent .breadCrums {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100px;
-  }
-  .mainCatContent .breadCrums span {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    display: none;
   }
   .mainCatContent .competitiveExam {
     display: -webkit-box;
@@ -668,11 +880,12 @@ header .container .header .headerend button {
             flex-direction: column;
   }
   .mainCatContent .competitiveExam .examHeading {
+    margin-top: 2em;
     height: 50px;
   }
   .mainCatContent .competitiveExam .examHeading p {
     overflow: hidden;
-    font-size: 25px;
+    font-size: 6.5vw;
     text-align: center;
     font-weight: 900;
     letter-spacing: 1px;
@@ -690,7 +903,7 @@ header .container .header .headerend button {
     height: 1px;
     position: relative;
     vertical-align: middle;
-    width: 10.5%;
+    width: 15vw;
     white-space: nowrap;
   }
   .mainCatContent .competitiveExam .examHeading p:before {
@@ -749,7 +962,186 @@ header .container .header .headerend button {
             align-items: center;
     padding: 20px 0 10px 0;
     width: 80%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0px solid rgba(0, 0, 0, 0.3);
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .allCoursesHeading h2 {
+    font-weight: 800;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseButton {
+    display: none;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2rem;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard .row1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard .row1 .card:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard .row2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard .row2 .card:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard .row3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .courseCard .row3 .card:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainCatContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCatContent .breadCrums {
+    display: none;
+  }
+  .mainCatContent .competitiveExam {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCatContent .competitiveExam .examHeading {
+    height: 50px;
+    margin-top: 2em;
+  }
+  .mainCatContent .competitiveExam .examHeading p {
+    overflow: hidden;
+    font-size: 6.5vw;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+  }
+  .mainCatContent .competitiveExam .examHeading p:before, .mainCatContent .competitiveExam .examHeading p::after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 15vw;
+    white-space: nowrap;
+  }
+  .mainCatContent .competitiveExam .examHeading p:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  .mainCatContent .competitiveExam .examHeading p::after {
+    left: 0.5em;
+    margin-right: 0%;
+  }
+  .mainCatContent .competitiveExam .catSubContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-column-gap: 7rem;
+            column-gap: 7rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCatContent .competitiveExam .catSubContent .catSide {
+    display: none;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .poster {
+    width: 100%;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .poster img {
+    width: 100%;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .allCoursesHeading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px 0 10px 0;
+    width: 80%;
+    border-bottom: 10x solid rgba(0, 0, 0, 0.3);
   }
   .mainCatContent .competitiveExam .catSubContent .allContent .allCourses .allCoursesHeading h2 {
     font-weight: 800;
@@ -844,8 +1236,7 @@ header .container .header .headerend button {
 
 .mainPage .loginPage {
   background: white;
-  height: 50%;
-  width: 40%;
+  width: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -863,7 +1254,6 @@ header .container .header .headerend button {
 
 .mainPage .loginPage .loginHeading {
   width: 100%;
-  height: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -873,6 +1263,7 @@ header .container .header .headerend button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 16px 16px;
 }
 
 .mainPage .loginPage .loginHeading .text {
@@ -882,7 +1273,6 @@ header .container .header .headerend button {
 
 .mainPage .loginPage .loginInfo {
   width: 100%;
-  height: 45%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -896,7 +1286,6 @@ header .container .header .headerend button {
 }
 
 .mainPage .loginPage .loginInfo .googleLogin {
-  height: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -906,6 +1295,7 @@ header .container .header .headerend button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0px 0px 16px 0px;
 }
 
 .mainPage .loginPage .loginInfo .googleLogin span {
@@ -934,6 +1324,7 @@ header .container .header .headerend button {
 
 .mainPage .loginPage .loginInfo .divider {
   width: 100%;
+  padding-bottom: 16px;
 }
 
 .mainPage .loginPage .loginInfo .divider p {
@@ -965,7 +1356,6 @@ header .container .header .headerend button {
 
 .mainPage .loginPage .loginInfo .loginInput {
   width: 50%;
-  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -977,6 +1367,7 @@ header .container .header .headerend button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 16px;
 }
 
 .mainPage .loginPage .loginInfo .loginInput .username {
@@ -1091,12 +1482,52 @@ header .container .header .headerend button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 1rem;
+  padding: 16px 0;
 }
 
 .mainPage .loginPage .notloginText p {
   -webkit-margin-before: 0.5em;
           margin-block-start: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .mainPage .loginPage {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainPage .loginPage {
+    width: 100%;
+  }
+  .mainPage .loginPage .loginBtn {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .mainPage .loginPage .loginInfo .loginInput {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .mainPage .loginPage .loginHeading .text {
+    font-size: 10vw;
+    color: navy;
+  }
+  .mainPage .loginPage .loginInfo .googleLogin span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3px 53px;
+    -webkit-column-gap: 0.5rem;
+            column-gap: 0.5rem;
+  }
+  .mainPage .loginPage .loginInfo .googleLogin span img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .signupPage {
@@ -1120,7 +1551,6 @@ header .container .header .headerend button {
 
 .signupPage .signupForm {
   background: white;
-  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1131,6 +1561,7 @@ header .container .header .headerend button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 20px 40px;
 }
 
 .signupPage .signupForm .up {
@@ -1161,6 +1592,7 @@ header .container .header .headerend button {
   border: 1px solid #000;
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .signupPage .signupForm .up .googleLogin span {
@@ -1172,7 +1604,7 @@ header .container .header .headerend button {
           align-items: center;
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
-  padding: 5px 30px;
+  padding: 3px 30px;
 }
 
 .signupPage .signupForm .up .googleLogin span img {
@@ -1217,7 +1649,7 @@ header .container .header .headerend button {
 }
 
 .signupPage .signupForm .center {
-  width: 70%;
+  width: 80%;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1235,20 +1667,22 @@ header .container .header .headerend button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 0.5em;
-          column-gap: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .signupPage .signupForm .center span input {
   width: 50%;
   border: 1px solid #000;
   outline: none;
-  padding: 8px 20px;
+  padding: 10px 20px;
   width: auto;
 }
 
 .signupPage .signupForm .center input {
-  padding: 8px 20px;
+  outline: none;
+  padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 10px;
 }
@@ -1264,6 +1698,7 @@ header .container .header .headerend button {
   border: none;
   padding: 8px 20px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .signupPage .signupForm .center button a {
@@ -1273,6 +1708,7 @@ header .container .header .headerend button {
 
 .signupPage .signupForm .center span p.login {
   font-size: 17px;
+  margin-bottom: 1em;
 }
 
 .signupPage .signupForm .center span p.login a {
@@ -1299,6 +1735,60 @@ header .container .header .headerend button {
 
 .signupPage .signupForm .down p span {
   font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .signupPage .signupForm {
+    padding: 20px 0px;
+  }
+  .signupPage .signupForm .up .googleLogin span {
+    padding: 0 30px;
+  }
+  .signupPage .signupForm .up .googleLogin span img {
+    width: 24px;
+    height: 28px;
+  }
+  .signupPage .signupForm .up .heading h4 {
+    color: navy;
+    font-size: 6.5vw;
+  }
+  .signupPage .signupForm .center {
+    width: 90%;
+  }
+  .signupPage .signupForm .center span input {
+    width: 47%;
+    border: 1px solid #000;
+    padding: 7px 20px;
+  }
+  .signupPage .signupForm .center input {
+    outline: none;
+    padding: 7px 20px;
+    border-radius: 10px;
+  }
+  .signupPage .signupForm .center .logintext {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .signupPage .signupForm hr.line {
+    width: 90%;
+    height: 1px;
+    outline: none;
+    border: none;
+    background: #000;
+  }
+  .signupPage .signupForm .down {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    width: 80%;
+  }
 }
 
 .poster {
@@ -1399,7 +1889,7 @@ header .container .header .headerend button {
           justify-content: space-between;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .row .cards-desktop {
     display: none;
   }
@@ -1475,7 +1965,39 @@ header .container .header .headerend button {
   display: none;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 577px) and (max-width: 768px) {
+  .explore {
+    margin-top: 30px;
+  }
+  .explore p {
+    overflow: hidden;
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 900;
+  }
+  .explore p span {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+  .explore p:before,
+  .explore p:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+  .explore p:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  .explore p:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
   .row .course-list ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1484,6 +2006,79 @@ header .container .header .headerend button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .row .course-list ul li {
+    margin-left: 0;
+  }
+  .row .cards-mobile {
+    margin-top: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: 3em;
+            column-gap: 3em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .row .cards-mobile .card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .explore {
+    margin-top: 30px;
+  }
+  .explore p {
+    overflow: hidden;
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 900;
+  }
+  .explore p span {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+  .explore p:before,
+  .explore p:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+  .explore p:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  .explore p:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+  .row .course-list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .row .course-list ul li {
+    margin-left: 0;
   }
   .row .cards-mobile {
     margin-top: 40px;
@@ -1499,140 +2094,6 @@ header .container .header .headerend button {
             align-items: center;
   }
   .row .cards-mobile .card:not(:last-child) {
-    margin-bottom: 20px;
-  }
-}
-
-.courseHeadingUp {
-  margin-bottom: 2rem;
-}
-
-.courseHeadingUp p {
-  overflow: hidden;
-  font-size: 25px;
-  font-weight: 900;
-}
-
-.courseHeadingUp p span {
-  color: black;
-  -webkit-text-fill-color: transparent;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: black;
-}
-
-.courseHeadingUp p:before {
-  background-color: #000;
-  content: "";
-  display: inline-block;
-  height: 1px;
-  position: relative;
-  vertical-align: middle;
-  width: 15%;
-}
-
-.courseHeadingUp p:before {
-  right: 0.5em;
-  margin-left: 0%;
-}
-
-.latest {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 3rem;
-}
-
-.latest .latest-course {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.courseHeadingDown {
-  margin-top: 2rem;
-}
-
-.courseHeadingDown a {
-  overflow: hidden;
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.courseHeadingDown a span {
-  font-size: 20px;
-  font-weight: 700;
-  margin-right: 0.5em;
-  border: 1px solid blue;
-  padding: 8px 25px;
-  border-radius: 10px;
-}
-
-.courseHeadingDown a:after {
-  background-color: #000;
-  content: "";
-  display: inline-block;
-  height: 1px;
-  position: relative;
-  vertical-align: middle;
-  width: 15%;
-}
-
-@media (max-width: 576px) {
-  .courseHeadingUp .courseHeadingUp p:before,
-  .courseHeadingUp p:after {
-    background-color: #000;
-    content: "";
-    display: inline-block;
-    height: 1px;
-    position: relative;
-    vertical-align: middle;
-    width: 20%;
-  }
-  .courseHeadingUp p:after {
-    margin-left: 0.5em;
-  }
-  .courseHeadingUp p:before {
-    right: 0;
-    margin-right: 0.5em;
-  }
-  .latest {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .latest .latest-course {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .latest .latest-course .card:not(:last-child) {
     margin-bottom: 20px;
   }
 }
@@ -1797,7 +2258,11 @@ header .container .header .headerend button {
   width: 15%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .workshopHeadingUp p {
+    text-align: center;
+    font-size: 6vw;
+  }
   .workshopHeadingUp p:before,
   .workshopHeadingUp p:after {
     background-color: #000;
@@ -1806,7 +2271,7 @@ header .container .header .headerend button {
     height: 1px;
     position: relative;
     vertical-align: middle;
-    width: 29.7%;
+    width: 30vw;
   }
   .workshopHeadingUp p:after {
     margin-left: 0.5em;
@@ -1835,12 +2300,271 @@ header .container .header .headerend button {
   .workshopcards .card:not(:last-child) {
     margin-bottom: 20px;
   }
+  .workshopcards .card .workshopDate p {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+  }
 }
 
-button {
-  border: none;
-  outline: none;
-  background-color: transparent;
+@media (max-width: 576px) {
+  .workshopHeadingUp p {
+    text-align: center;
+    font-size: 6vw;
+  }
+  .workshopHeadingUp p:before,
+  .workshopHeadingUp p:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 30vw;
+  }
+  .workshopHeadingUp p:after {
+    margin-left: 0.5em;
+  }
+  .workshopHeadingUp p:before {
+    right: 0;
+    margin-right: 0.5em;
+  }
+  .workshopcards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .workshopcards .card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .workshopcards .card .workshopDate p {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+  }
+}
+
+.courseHeadingUp {
+  margin-bottom: 2rem;
+}
+
+.courseHeadingUp p {
+  overflow: hidden;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.courseHeadingUp p span {
+  color: black;
+  -webkit-text-fill-color: transparent;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+
+.courseHeadingUp p:before {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 15%;
+}
+
+.courseHeadingUp p:before {
+  right: 0.5em;
+  margin-left: 0%;
+}
+
+.latest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 3rem;
+}
+
+.latest .latest-course {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.courseHeadingDown {
+  margin-top: 2rem;
+}
+
+.courseHeadingDown a {
+  overflow: hidden;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.courseHeadingDown a span {
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 0.5em;
+  border: 1px solid blue;
+  padding: 8px 25px;
+  border-radius: 10px;
+}
+
+.courseHeadingDown a:after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 15%;
+}
+
+@media (max-width: 768px) {
+  .courseHeadingUp {
+    text-align: center;
+  }
+  .courseHeadingUp p {
+    font-size: 6.5vw;
+  }
+  .courseHeadingUp p:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20vw;
+  }
+  .courseHeadingUp p:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20vw;
+  }
+  .courseHeadingUp p:after {
+    margin-left: 0.5em;
+  }
+  .courseHeadingUp p:before {
+    right: 0;
+    margin-right: 0.5em;
+  }
+  .latest {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .latest .latest-course {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-column-gap: 3em;
+            column-gap: 3em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .latest .latest-course .card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .courseHeadingUp {
+    text-align: center;
+  }
+  .courseHeadingUp p {
+    font-size: 6.5vw;
+  }
+  .courseHeadingUp p:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20vw;
+  }
+  .courseHeadingUp p:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20vw;
+  }
+  .courseHeadingUp p:after {
+    margin-left: 0.5em;
+  }
+  .courseHeadingUp p:before {
+    right: 0;
+    margin-right: 0.5em;
+  }
+  .latest {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .latest .latest-course {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .latest .latest-course .card:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 .mainCourseContent {
@@ -1854,7 +2578,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100px;
+  height: auto;
 }
 
 .mainCourseContent .breadCrums span {
@@ -1864,6 +2588,10 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+}
+
+.mainCourseContent .breadCrums span a {
+  margin: 16px 0;
 }
 
 .course {
@@ -1878,7 +2606,7 @@ button {
 }
 
 .course .courseHeading {
-  height: 50px;
+  height: auto;
 }
 
 .course .courseHeading .courseHead {
@@ -1917,6 +2645,9 @@ button {
 
 .course .courseHeading .teacherName {
   line-height: 0px;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  margin-top: 16px;
 }
 
 .course .courseHeading .teacherName:before {
@@ -2243,26 +2974,16 @@ button {
   background-color: white;
 }
 
-@media (max-width: 576px) {
+.course .courseContent .buyButtonGloble {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .mainCourseContent {
     background-color: gainsboro;
   }
   .mainCourseContent .breadCrums {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100px;
-  }
-  .mainCourseContent .breadCrums span {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    display: none;
   }
   .course {
     display: -webkit-box;
@@ -2272,15 +2993,13 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    row-gap: 3rem;
-  }
-  .course .courseHeading {
-    height: 50px;
+    row-gap: 1rem;
   }
   .course .courseHeading .courseHead {
     overflow: hidden;
-    font-size: 30px;
+    font-size: 5vw;
     font-weight: 900;
+    text-align: center;
     letter-spacing: 1px;
     -webkit-margin-before: 0;
             margin-block-start: 0;
@@ -2294,21 +3013,27 @@ button {
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: black;
   }
-  .course .courseHeading .courseHead:before {
+  .course .courseHeading .courseHead:before,
+  .course .courseHeading .courseHead:after {
     background-color: #000;
     content: "";
     display: inline-block;
     height: 1px;
     position: relative;
     vertical-align: middle;
-    width: 17.5%;
+    width: 12vw;
   }
   .course .courseHeading .courseHead:before {
     right: 0.5em;
     margin-left: 0%;
   }
+  .course .courseHeading .courseHead:after {
+    left: 0.5em;
+    margin-right: 0%;
+  }
   .course .courseHeading .teacherName {
     line-height: 0px;
+    font-size: 4vw;
   }
   .course .courseHeading .teacherName:before {
     background-color: #000;
@@ -2317,7 +3042,7 @@ button {
     height: 0px;
     position: relative;
     vertical-align: middle;
-    width: 17.5%;
+    width: 14vw;
   }
   .course .courseHeading .teacherName:before {
     right: 0.5em;
@@ -2374,7 +3099,7 @@ button {
   }
   .course .courseContent .upContent .upLeft .videoButtons .buyButton {
     width: 70%;
-    font-size: 15px;
+    font-size: 16px;
     color: white;
     background-color: blue;
     font-weight: 600;
@@ -2599,10 +3324,12 @@ button {
             column-gap: 1rem;
   }
   .course .courseContent .downContent .description .discContent .courseBy .img {
-    width: 20%;
+    width: 100px;
   }
   .course .courseContent .downContent .description .discContent .courseBy .img img {
-    border-radius: 50%;
+    width: 100px;
+    border-radius: 50px;
+    height: 100px;
     width: 100%;
   }
   .course .courseContent .downContent .description .discContent .courseBy .text p {
@@ -2610,8 +3337,2044 @@ button {
   }
   .course .courseContent .downContent .review {
     width: 100%;
-    height: 100vh;
-    background-color: red;
+    height: 10vh;
+    background-color: white;
+  }
+  .course .courseContent .buyButtonGloble {
+    display: inline;
+    width: 80%;
+    margin: 0px auto 16px auto;
+    font-size: 16px;
+    color: white;
+    background-color: blue;
+    font-weight: 600;
+    padding: 20px 40px 20px 40px;
+    border-radius: 10px;
+  }
+  .course .courseContent .buyButtonGloble p {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainCourseContent {
+    background-color: gainsboro;
+  }
+  .mainCourseContent .breadCrums {
+    display: none;
+  }
+  .course {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1rem;
+  }
+  .course .courseHeading {
+    margin-top: 2em;
+  }
+  .course .courseHeading .courseHead {
+    overflow: hidden;
+    font-size: 5vw;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1px;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+  }
+  .course .courseHeading .courseHead span {
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+  }
+  .course .courseHeading .courseHead:before,
+  .course .courseHeading .courseHead:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 11vw;
+  }
+  .course .courseHeading .courseHead:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  .course .courseHeading .courseHead:after {
+    left: 0.5em;
+    margin-right: 0%;
+  }
+  .course .courseHeading .teacherName {
+    line-height: 0px;
+    font-size: 3vw;
+  }
+  .course .courseHeading .teacherName:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 0px;
+    position: relative;
+    vertical-align: middle;
+    width: 14vw;
+  }
+  .course .courseHeading .teacherName:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  .course .courseContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .course .courseContent .upContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.7rem;
+  }
+  .course .courseContent .upContent .upLeft {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    position: relative;
+    row-gap: 0.7rem;
+  }
+  .course .courseContent .upContent .upLeft .video img {
+    width: 100%;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons {
+    padding: 0 16px;
+    position: initial;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    bottom: 0;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .buyButton {
+    width: 70%;
+    font-size: 16px;
+    color: white;
+    background-color: blue;
+    font-weight: 600;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .buyButton p {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton {
+    width: 30%;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton button {
+    background-color: #11fe8c;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    width: 100%;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 10px;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 15px 0 15px 0;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton button p {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    display: none;
+  }
+  .course .courseContent .upContent .upLeft .videoButtons .shareButton button img {
+    width: 30%;
+  }
+  .course .courseContent .upContent .upRight {
+    width: 100%;
+  }
+  .course .courseContent .upContent .upRight .progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.6rem;
+    padding: 10px 20px 10px 20px;
+    overflow-y: scroll;
+    background-color: #003e5a;
+    color: white;
+    height: 60vh;
+  }
+  .course .courseContent .upContent .upRight .progress h4 {
+    border-bottom: 1px solid white;
+    padding: 0 0 5px 0;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder:not(:last-child) {
+    border-bottom: 1px solid white;
+    padding: 0px 0px 20px 0px;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 {
+    width: 90%;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader p {
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelHeader img,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelHeader img,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelHeader img,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelHeader img {
+    width: 40px;
+    height: 40px;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 {
+    line-height: 1.5rem;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3 .listItem,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 .listItem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model1 .modelList4 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model2 .modelList4 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model3 .modelList4 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList1 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList2 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList3 .listItem p,
+  .course .courseContent .upContent .upRight .progress .modelBorder .model4 .modelList4 .listItem p {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+  }
+  .course .courseContent .downContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .course .courseContent .downContent .description {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5rem;
+    background-color: white;
+    padding: 0 16px 16px 16px;
+  }
+  .course .courseContent .downContent .description .discHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding: 0 0 10px 0px;
+  }
+  .course .courseContent .downContent .description .discHead p {
+    font-weight: 600;
+  }
+  .course .courseContent .downContent .description .discHead p span {
+    color: yellowgreen;
+  }
+  .course .courseContent .downContent .description .discContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2rem;
+  }
+  .course .courseContent .downContent .description .discContent p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2rem;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy .img {
+    width: 100px;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy .img img {
+    width: 100px;
+    border-radius: 50px;
+    height: 100px;
+    width: 100%;
+  }
+  .course .courseContent .downContent .description .discContent .courseBy .text p {
+    line-height: 1rem;
+  }
+  .course .courseContent .downContent .review {
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+  }
+  .course .courseContent .buyButtonGloble {
+    display: inline;
+    width: 80%;
+    margin: 0px auto 16px auto;
+    font-size: 16px;
+    color: white;
+    background-color: blue;
+    font-weight: 600;
+    padding: 20px 40px 20px 40px;
+    border-radius: 10px;
+  }
+  .course .courseContent .buyButtonGloble p {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+  }
+}
+
+body {
+  background: #ebebeb;
+}
+
+section .checkoutText {
+  padding: 2rem 0;
+}
+
+section .checkoutText p {
+  font-size: 16px;
+  color: blue;
+  -webkit-margin-before: 0.2em;
+          margin-block-start: 0.2em;
+}
+
+section .myBag {
+  width: 100%;
+  background: white;
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+section .myBag .heading {
+  padding: 2rem 0;
+}
+
+section .myBag .heading span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section .myBag .heading span img {
+  width: 52px;
+  height: 52px;
+}
+
+section .myBag .bagItems .cards {
+  padding: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section .myBag .bagItems .cards .cardSectionOne {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 400px;
+  width: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard p {
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard img.cross {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard img.img {
+  width: 100%;
+  height: auto;
+  margin-top: 35px;
+  border-radius: 20px;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard p.desc {
+  text-align: justify;
+  font-size: 0.9vw;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.discountPrice {
+  font-size: 0.8vw;
+  font-weight: 700;
+  color: blue;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.mainPrice {
+  font-size: 0.8vw;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 400px;
+  width: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard p {
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard img.cross {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard img.img {
+  width: 100%;
+  height: auto;
+  margin-top: 35px;
+  border-radius: 20px;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard p.desc {
+  text-align: justify;
+  font-size: 0.9vw;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.discountPrice {
+  font-size: 0.8vw;
+  font-weight: 700;
+  color: blue;
+}
+
+section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.mainPrice {
+  font-size: 0.8vw;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+section .myBag hr {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section .myBag .bagTotal {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+section .myBag .bagTotal .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+section .myBag .bagTotal .total p {
+  -webkit-margin-before: 0.2em;
+          margin-block-start: 0.2em;
+}
+
+section .myBag .bagTotal .total p.totalHeading {
+  font-size: 1.3vw;
+}
+
+section .myBag .bagTotal .total p.discountTotalPrice {
+  font-size: 1.5vw;
+  font-weight: 900;
+}
+
+section .myBag .bagTotal .total p.mainTotalPrice {
+  font-size: 0.8vw;
+  opacity: 0.7;
+}
+
+section .myBag .bagTotal .total button.buynow {
+  padding: 12px 50px;
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 800;
+  background: blue;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  section .checkoutText {
+    display: none;
+  }
+  section .myBag {
+    width: 100%;
+    background: white;
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  section .myBag .heading {
+    padding: 2rem 0;
+    background-color: #f4f4f4;
+  }
+  section .myBag .heading span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section .myBag .heading span img {
+    width: 52px;
+    height: 52px;
+  }
+  section .myBag .heading span {
+    overflow: hidden;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+  }
+  section .myBag .heading span:before, section .myBag .heading span::after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 40vw;
+    white-space: nowrap;
+  }
+  section .myBag .heading span:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  section .myBag .heading span::after {
+    left: 0.5em;
+    margin-right: 0%;
+  }
+  section .myBag .bagItems .cards {
+    padding: 2rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    row-gap: 2rem;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .myBag .bagItems .cards .cardSectionOne {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2rem;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 80%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard p {
+    -webkit-margin-before: 0.5em;
+            margin-block-start: 0.5em;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard img.cross {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard img.img {
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+    border-radius: 20px;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard p.desc {
+    text-align: justify;
+    font-size: 4vw;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.discountPrice {
+    font-size: 4vw;
+    font-weight: 700;
+    color: blue;
+  }
+  section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.mainPrice {
+    font-size: 4vw;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2rem;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 80%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard p {
+    -webkit-margin-before: 0.5em;
+            margin-block-start: 0.5em;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard img.cross {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard img.img {
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+    border-radius: 20px;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard p.desc {
+    text-align: justify;
+    font-size: 4vw;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.discountPrice {
+    font-size: 4vw;
+    font-weight: 700;
+    color: blue;
+  }
+  section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.mainPrice {
+    font-size: 4vw;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  section .myBag hr {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section .myBag .bagTotal {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    box-shadow: 4px 3px 14px 1px #d6d6d6;
+    -webkit-box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 3px 14px 1px #d6d6d6;
+  }
+  section .myBag .bagTotal .total {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .myBag .bagTotal .total .totalprice {
+    width: 50%;
+    padding: 8px 0px 8px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
+  }
+  section .myBag .bagTotal .total .totalprice p {
+    -webkit-margin-before: 0.2em;
+            margin-block-start: 0.2em;
+  }
+  section .myBag .bagTotal .total .totalprice p.totalHeading {
+    font-size: 3.5vw;
+    font-weight: 600;
+    text-align: left;
+  }
+  section .myBag .bagTotal .total .totalprice .totalanddisc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  section .myBag .bagTotal .total .totalprice .totalanddisc p.discountTotalPrice {
+    font-size: 4vw;
+    font-weight: 700;
+    -webkit-transform: scale(1, 1.4);
+    transform: scale(1, 1.4);
+  }
+  section .myBag .bagTotal .total .totalprice .totalanddisc strike {
+    color: red;
+  }
+  section .myBag .bagTotal .total .totalprice .totalanddisc strike p.mainTotalPrice {
+    font-size: 3vw;
+    -webkit-margin-before: 0.5em;
+            margin-block-start: 0.5em;
+    opacity: 0.7;
+    font-weight: 700;
+    color: red;
+  }
+  section .myBag .bagTotal .total button.buynow {
+    width: 50%;
+    padding: 0;
+    height: 100%;
+    margin-top: 0rem;
+    color: white;
+    font-size: 4.5vw;
+    font-weight: 700;
+    background: #006FFF;
+    border-radius: 0px;
+  }
+}
+
+.container .breadCrums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+.container .breadCrums span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.container .mainPayment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+}
+
+.container .mainPayment p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+.container .mainPayment .payHead {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.container .mainPayment .payHead p {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.container .mainPayment .order_payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.container .mainPayment .order_payment .orderLeft {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+  padding: 0 20px 0 30px;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails {
+  overflow-y: scroll;
+  height: 50vh;
+  scroll-behavior: smooth;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails .orderCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  padding: 15px 0 15px 0;
+  border-bottom: 1px solid #000;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails .orderCard .cardDetails .leftDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails .orderCard .cardDetails .rightDetail p {
+  display: none;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar {
+  width: 0px;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container .mainPayment .order_payment .orderLeft .orderTotal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .mainPayment .order_payment .paymentRight {
+  width: 50%;
+  border-left: 1px solid #000;
+}
+
+.container .mainPayment .order_payment .paymentRight .paymentRightInner {
+  padding: 0 20px 0 30px;
+}
+
+.container .mainPayment .order_payment .paymentRight .paymentRightInner .paymentOption {
+  height: 50vh;
+}
+
+.container .mainPayment .order_payment .paymentRight .paymentRightInner .payButton button {
+  background-color: #006FFF;
+  padding: 10px 60px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.container .mainPayment .mobileButton {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .container .breadCrums {
+    display: none;
+  }
+  .container .mainPayment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
+  }
+  .container .mainPayment p {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+  }
+  .container .mainPayment .payHead {
+    width: 100%;
+    padding: 40px 0;
+  }
+  .container .mainPayment .payHead p {
+    text-align: center;
+    font-size: 6.5vw;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .container .mainPayment .payHead p {
+    overflow: hidden;
+    font-size: 7vw;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    color: black;
+  }
+  .container .mainPayment .payHead p:before, .container .mainPayment .payHead p::after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20vw;
+    white-space: nowrap;
+  }
+  .container .mainPayment .payHead p:before {
+    right: 0.5em;
+    margin-left: 0%;
+  }
+  .container .mainPayment .payHead p::after {
+    left: 0.5em;
+    margin-right: 0%;
+  }
+  .container .mainPayment .order_payment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    padding: 40px 0;
+    width: 100%;
+  }
+  .container .mainPayment .order_payment .orderLeft {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1rem;
+    padding: 0 20px 0 30px;
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails {
+    overflow-y: scroll;
+    height: 50vh;
+    scroll-behavior: smooth;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails .orderCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    padding: 15px 0 15px 0;
+    border-bottom: 1px solid #000;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails .orderCard .cardDetails .leftDetail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails .orderCard .cardDetails .leftDetail p.rs500 {
+    display: none;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails .orderCard .cardDetails .rightDetail p {
+    display: initial;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar {
+    width: 0px;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderDetails::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .container .mainPayment .order_payment .orderLeft .orderTotal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .container .mainPayment .order_payment .paymentRight {
+    width: 100%;
+    border-left: 1px solid #000;
+  }
+  .container .mainPayment .order_payment .paymentRight .paymentRightInner {
+    padding: 0 20px 0 30px;
+  }
+  .container .mainPayment .order_payment .paymentRight .paymentRightInner .paymentOption {
+    height: 50vh;
+  }
+  .container .mainPayment .order_payment .paymentRight .paymentRightInner .payButton {
+    display: none;
+  }
+  .container .mainPayment .mobileButton {
+    display: initial;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    box-shadow: 4px 3px 14px 1px #d6d6d6;
+    -webkit-box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 3px 14px 1px #d6d6d6;
+  }
+  .container .mainPayment .mobileButton .total {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .mainPayment .mobileButton .total .totalprice {
+    width: 50%;
+    padding: 8px 0px 8px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
+  }
+  .container .mainPayment .mobileButton .total .totalprice p {
+    -webkit-margin-before: 0.2em;
+            margin-block-start: 0.2em;
+  }
+  .container .mainPayment .mobileButton .total .totalprice p.totalHeading {
+    font-size: 3.5vw;
+    font-weight: 600;
+    text-align: left;
+  }
+  .container .mainPayment .mobileButton .total .totalprice .totalanddisc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .container .mainPayment .mobileButton .total .totalprice .totalanddisc p.discountTotalPrice {
+    font-size: 4vw;
+    font-weight: 700;
+    -webkit-transform: scale(1, 1.4);
+    transform: scale(1, 1.4);
+  }
+  .container .mainPayment .mobileButton .total .totalprice .totalanddisc strike {
+    color: red;
+  }
+  .container .mainPayment .mobileButton .total .totalprice .totalanddisc strike p.mainTotalPrice {
+    font-size: 3vw;
+    -webkit-margin-before: 0.5em;
+            margin-block-start: 0.5em;
+    opacity: 0.7;
+    font-weight: 700;
+    color: red;
+  }
+  .container .mainPayment .mobileButton .total button.buynow {
+    width: 50%;
+    padding: 0;
+    height: 100%;
+    margin-top: 0rem;
+    color: white;
+    font-size: 4.5vw;
+    font-weight: 700;
+    background: #006FFF;
+    border-radius: 0px;
+  }
+}
+
+.container .mainProfile {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  padding: 50px 20px 50px 0px;
+}
+
+.container .mainProfile aside {
+  width: 30%;
+}
+
+.container .mainProfile aside .profileSidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid black;
+}
+
+.container .mainProfile aside .profileSidebar .sidebarUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 0.1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .mainProfile aside .profileSidebar .sidebarUp img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.container .mainProfile aside .profileSidebar .sidebarDown ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .mainProfile aside .profileSidebar .sidebarDown ul li.active {
+  color: white;
+  background-color: #1b1b52;
+  padding: 8px 30px;
+}
+
+.container .mainProfile main {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .mainProfile main .mainHead h3 {
+  padding: 20px 10px 10px 40px;
+  border-bottom: 1px solid #000;
+}
+
+.container .mainProfile main .mainContent {
+  padding: 20px 10px 10px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2em;
+}
+
+.container .mainProfile main .mainContent .profileInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5em;
+  width: 70%;
+}
+
+.container .mainProfile main .mainContent .profileInputs input {
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  width: 100%;
+}
+
+.container .mainProfile main .mainContent .profileButton button {
+  color: white;
+  background-color: #006fff;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px 50px;
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .container .mainProfile {
+    max-width: 800px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 16px 0 16px;
+  }
+  .container .mainProfile aside {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1em;
+  }
+  .container .mainProfile aside .profileSidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5em;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-right: 0px solid black;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarUp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarUp img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.6rem;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul li {
+    padding: 8px 10px;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul li.active {
+    color: white;
+    background-color: #1b1b52;
+    padding: 8px 10px;
+  }
+  .container .mainProfile main {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .mainProfile main .mainHead h3 {
+    padding: 20px 10px 10px 40px;
+    border-bottom: 0px solid #000;
+  }
+  .container .mainProfile main .mainContent {
+    padding: 20px 10px 10px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2em;
+  }
+  .container .mainProfile main .mainContent .profileInputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5em;
+    width: 100%;
+  }
+  .container .mainProfile main .mainContent .profileInputs input {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    width: 100%;
+  }
+  .container .mainProfile main .mainContent .profileButton button {
+    color: white;
+    background-color: #006fff;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 10px 50px;
+    letter-spacing: 0.8px;
+    border-radius: 10px;
+  }
+}
+
+.container .mainProfile {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  padding: 50px 20px 50px 0px;
+}
+
+.container .mainProfile main {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1em;
+}
+
+.container .mainProfile main .mainHead h3 {
+  padding: 20px 10px 10px 40px;
+  border-bottom: 1px solid #000;
+}
+
+.container .mainProfile main .mainContent {
+  padding: 20px 10px 10px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1em;
+}
+
+.container .mainProfile main .mainContent .passwordInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5em;
+  width: 70%;
+}
+
+.container .mainProfile main .mainContent .passwordInputs input {
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.container .mainProfile main .mainContent .passwordButton button {
+  color: white;
+  background-color: #006fff;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px 50px;
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .container .mainProfile {
+    max-width: 800px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 16px 0 16px;
+  }
+  .container .mainProfile aside {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1em;
+  }
+  .container .mainProfile aside .profileSidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5em;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-right: 0px solid black;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarUp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarUp img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.6rem;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul li {
+    padding: 8px 10px;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul li.active {
+    color: white;
+    background-color: #1b1b52;
+    padding: 8px 10px;
+  }
+  .container .mainProfile main {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1em;
+  }
+  .container .mainProfile main .mainHead h3 {
+    padding: 20px 10px 10px 20px;
+    border-bottom: 0px solid #000;
+  }
+  .container .mainProfile main .mainContent {
+    padding: 20px 10px 10px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: inherit;
+        align-content: inherit;
+    row-gap: 1em;
+  }
+  .container .mainProfile main .mainContent .passwordInputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5em;
+    width: 100%;
+  }
+  .container .mainProfile main .mainContent .passwordInputs input {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    width: 100%;
+  }
+  .container .mainProfile main .mainContent .passwordButton button {
+    color: white;
+    background-color: #006fff;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 10px 50px;
+    letter-spacing: 0.8px;
+    border-radius: 10px;
+  }
+}
+
+.container .mainProfile {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  padding: 50px 20px 50px 0px;
+}
+
+.container .mainProfile main {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1em;
+}
+
+.container .mainProfile main .mainHead h3 {
+  padding: 20px 10px 10px 40px;
+  border-bottom: 1px solid #000;
+}
+
+.container .mainProfile main .mainContent {
+  padding: 20px 10px 10px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1em;
+}
+
+.container .mainProfile main .mainContent .paymentContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+}
+
+.container .mainProfile main .mainContent .paymentContent .savedPayment {
+  width: 80%;
+}
+
+.container .mainProfile main .mainContent .paymentContent .savedPayment p.savetitle {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.container .mainProfile main .mainContent .paymentContent .savedPayment p.paymentCard {
+  width: 100%;
+  color: white;
+  background-color: #006fff;
+  padding: 5px 20px;
+}
+
+.container .mainProfile main .mainContent .paymentContent a {
+  -webkit-text-decoration: underline blue;
+          text-decoration: underline blue;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .container .mainProfile {
+    max-width: 800px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 16px 0 16px;
+  }
+  .container .mainProfile aside {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1em;
+  }
+  .container .mainProfile aside .profileSidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.5em;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-right: 0px solid black;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarUp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarUp img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.6rem;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul li {
+    padding: 8px 10px;
+  }
+  .container .mainProfile aside .profileSidebar .sidebarDown ul li.active {
+    color: white;
+    background-color: #1b1b52;
+    padding: 8px 10px;
+  }
+  .container .mainProfile main {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1em;
+  }
+  .container .mainProfile main .mainHead h3 {
+    padding: 20px 10px 10px 20px;
+    border-bottom: 0px solid #000;
+  }
+  .container .mainProfile main .mainContent {
+    padding: 20px 10px 10px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1em;
+  }
+  .container .mainProfile main .mainContent .paymentContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1rem;
+  }
+  .container .mainProfile main .mainContent .paymentContent .savedPayment {
+    width: 100%;
+  }
+  .container .mainProfile main .mainContent .paymentContent .savedPayment p.savetitle {
+    font-weight: 600;
+    opacity: 0.9;
+  }
+  .container .mainProfile main .mainContent .paymentContent .savedPayment p.paymentCard {
+    width: 100%;
+    color: white;
+    background-color: #006fff;
+    padding: 5px 20px;
+  }
+  .container .mainProfile main .mainContent .paymentContent a {
+    -webkit-text-decoration: underline blue;
+            text-decoration: underline blue;
+    cursor: pointer;
   }
 }
 
@@ -2749,6 +5512,97 @@ footer .footer .rightContent .socialContent .box p {
   -webkit-text-stroke-color: black;
 }
 
+@media (max-width: 768px) {
+  footer .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .footer .leftContent {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer .leftContent .catContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer .leftContent .catContent .leftCatContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 50%;
+  }
+  footer .footer .leftContent .catContent .rightCatContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 50%;
+  }
+  footer .footer .leftContent .catHeading .hide {
+    display: none;
+  }
+  footer .footer .rightContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  footer .footer .rightContent p {
+    -webkit-margin-before: 0.20em;
+            margin-block-start: 0.20em;
+    -webkit-margin-after: 0.20em;
+            margin-block-end: 0.20em;
+  }
+}
+
 @media (max-width: 576px) {
   footer .footer {
     display: -webkit-box;
@@ -2802,22 +5656,22 @@ footer .footer .rightContent .socialContent .box p {
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    width: 40%;
+    width: 50%;
   }
   footer .footer .leftContent .catContent .rightCatContent {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    width: 40%;
+    width: 50%;
   }
   footer .footer .leftContent .catHeading .hide {
     display: none;

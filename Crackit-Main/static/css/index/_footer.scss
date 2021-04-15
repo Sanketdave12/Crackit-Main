@@ -1,0 +1,195 @@
+footer {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  .footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+    .leftContent {
+      width: 50%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      .catHeading {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        p.category {
+          // position: relative;
+          font-size: 30px;
+          font-weight: 900;
+          color: black;
+          -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+          -webkit-text-stroke-width: 1.5px;
+          -webkit-text-stroke-color: black;
+        }
+        p.hide {
+          color: transparent;
+          visibility: hidden;
+        }
+      }
+
+      .catContent {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+      .leftCatContent {
+        .subCattext {
+          p {
+            cursor: pointer;
+            margin: 15px 0;
+          }
+        }
+      }
+      .rightCatContent {
+        .subCattext {
+          p {
+            cursor: pointer;
+            margin: 15px 0;
+          }
+        }
+      }
+    }
+    .rightContent {
+      justify-content: space-around;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      .joinContent{
+        p{
+          font-size: 30px;
+          font-weight: 600;
+          color: brown;
+        }
+      }
+      .socialContent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .box{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid black;
+          width: 250px;
+          height: 250px;
+
+          p{
+            font-size: 25px;
+            font-weight: 900;
+            color: black;
+          -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+          -webkit-text-stroke-width: 1.5px;
+          -webkit-text-stroke-color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:768px){
+  footer{
+    .footer{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .leftContent{
+        .catContent{
+          display: flex;
+          justify-content: center;
+          .leftCatContent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 50%;
+          }
+          .rightCatContent{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 50%;
+          }
+        }
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .catHeading{
+          .hide{
+            display: none;
+          }
+        }
+      }
+      .rightContent{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        p{
+          margin-block-start: 0.20em;
+          margin-block-end: 0.20em;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:576px){
+  footer{
+    .footer{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .leftContent{
+        .catContent{
+          display: flex;
+          justify-content: center;
+          .leftCatContent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 50%;
+          }
+          .rightCatContent{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 50%;
+          }
+        }
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .catHeading{
+          .hide{
+            display: none;
+          }
+        }
+      }
+      .rightContent{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        p{
+          margin-block-start: 0.20em;
+          margin-block-end: 0.20em;
+        }
+      }
+    }
+  }
+}

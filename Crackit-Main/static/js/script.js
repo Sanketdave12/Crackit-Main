@@ -8,6 +8,13 @@ const service_item = document.querySelector('.serviceitem');
 const book_item = document.querySelector('.bookitem');
 const service_btn = document.querySelector('.service_back');
 const book_btn = document.querySelector('.book_back');
+const close = document.querySelector('.close');
+
+close.onclick = () => {
+  console.log('hehe');
+  menu_wrapper.classList.remove("show");
+  
+}
 
 drop_down.onclick = () => {
     console.log('hello')
