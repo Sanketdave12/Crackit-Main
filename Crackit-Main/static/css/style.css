@@ -3790,26 +3790,29 @@ section .myBag .bagItems .cards {
   display: flex;
   -webkit-column-gap: 3rem;
           column-gap: 3rem;
-  max-width: 900px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 section .myBag .bagItems .cards .cardSectionOne {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section .myBag .bagItems .cards .cardSectionOne .middle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-column-gap: 3rem;
           column-gap: 3rem;
   row-gap: 2rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3825,12 +3828,12 @@ section .myBag .bagItems .cards .cardSectionOne .singleCard {
           align-items: center;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard p {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard p {
   -webkit-margin-before: 0.5em;
           margin-block-start: 0.5em;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard img.cross {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard img.cross {
   width: 20px;
   height: auto;
   position: absolute;
@@ -3838,19 +3841,19 @@ section .myBag .bagItems .cards .cardSectionOne .singleCard img.cross {
   top: 0;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard img.img {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard img.img {
   width: 100%;
   height: auto;
   margin-top: 35px;
   border-radius: 20px;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard p.desc {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard p.desc {
   text-align: justify;
   font-size: 0.9vw;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard span.prices {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3860,25 +3863,16 @@ section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices {
           justify-content: space-between;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.discountPrice {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard span.prices p.discountPrice {
   font-size: 0.8vw;
   font-weight: 700;
   color: blue;
 }
 
-section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.mainPrice {
+section .myBag .bagItems .cards .cardSectionOne .middle .singleCard span.prices p.mainPrice {
   font-size: 0.8vw;
   font-weight: 700;
   opacity: 0.7;
-}
-
-section .myBag .bagItems .cards .singleCard:nth-child(3n-2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
 }
 
 section .myBag hr {
