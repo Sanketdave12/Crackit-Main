@@ -1,6 +1,9 @@
+$width : 600px;
+
 body {
   background: #ebebeb;
 }
+
 section {
   .checkoutText {
     padding: 2rem 0;
@@ -33,11 +36,15 @@ section {
         padding: 2rem 0;
         display: flex;
         column-gap: 3rem;
-        width: 100%;
-        justify-content: center;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
         .cardSectionOne {
           display: flex;
           column-gap: 3rem;
+          row-gap: 2rem;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
           .singleCard {
             position: relative;
             display: flex;
@@ -83,56 +90,14 @@ section {
               }
             }
           }
+          
         }
-        .cardSectionTwo {
+        .singleCard:nth-child(3n-2) {
           display: flex;
-          column-gap: 3rem;
-          .singleCard {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            width: 200px;
-            align-items: center;
-            // background: #ebebeb;
-
-            p {
-              margin-block-start: 0.5em;
-            }
-            img.cross {
-              width: 20px;
-              height: auto;
-              position: absolute;
-              right: 0;
-              top: 0;
-            }
-            img.img {
-              width: 100%;
-              height: auto;
-              margin-top: 35px;
-              border-radius: 20px;
-            }
-            p.desc {
-              text-align: justify;
-              font-size: 0.9vw;
-            }
-            span.prices {
-              display: flex;
-              width: 100%;
-              justify-content: space-between;
-              p.discountPrice {
-                font-size: 0.8vw;
-                font-weight: 700;
-                color: blue;
-              }
-              p.mainPrice {
-                font-size: 0.8vw;
-                font-weight: 700;
-                opacity: 0.7;
-              }
-            }
-          }
+          justify-content:start;
         }
+
+     
       }
     }
 
@@ -182,6 +147,7 @@ section {
 }
 
 @media screen and (max-width: 576px) {
+
   section {
     .checkoutText {
       display: none;
@@ -206,38 +172,38 @@ section {
           }
         }
         span {
-            overflow: hidden;
-            font-size: 25px;
-            text-align: center;
-            font-weight: 900;
-            letter-spacing: 1px;
-            margin-block-start: 0;
-            color: black;
-            -webkit-text-fill-color: transparent;
-            -webkit-text-stroke-width: 1.5px;
-            -webkit-text-stroke-color: black;
-          }
-  
-          span:before,span::after {
-            background-color: #000;
-            content: "";
-            display: inline-block;
-            height: 1px;
-            position: relative;
-            vertical-align: middle;
-            width: 40vw;
-            white-space: nowrap;
-          }
-  
-          span:before {
-            right: 0.5em;
-            margin-left: 0%;
-          }
-          span::after {
-            left: 0.5em;
-            margin-right: 0%;
-          }
-  
+          overflow: hidden;
+          font-size: 25px;
+          text-align: center;
+          font-weight: 900;
+          letter-spacing: 1px;
+          margin-block-start: 0;
+          color: black;
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke-width: 1.5px;
+          -webkit-text-stroke-color: black;
+        }
+
+        span:before,
+        span::after {
+          background-color: #000;
+          content: "";
+          display: inline-block;
+          height: 1px;
+          position: relative;
+          vertical-align: middle;
+          width: 40vw;
+          white-space: nowrap;
+        }
+
+        span:before {
+          right: 0.5em;
+          margin-left: 0%;
+        }
+        span::after {
+          left: 0.5em;
+          margin-right: 0%;
+        }
       }
       .bagItems {
         .cards {
@@ -249,57 +215,6 @@ section {
           flex-direction: column;
           align-items: center;
           .cardSectionOne {
-            display: flex;
-            flex-direction: column;
-            row-gap: 2rem;
-            .singleCard {
-              position: relative;
-              display: flex;
-              flex-direction: column;
-              width: 80%;
-              align-items: center;
-              margin-left: auto;
-              margin-right: auto;
-              // background: #ebebeb;
-
-              p {
-                margin-block-start: 0.5em;
-              }
-              img.cross {
-                width: 20px;
-                height: auto;
-                position: absolute;
-                right: 0;
-                top: 0;
-              }
-              img.img {
-                width: 100%;
-                height: auto;
-                margin-top: 35px;
-                border-radius: 20px;
-              }
-              p.desc {
-                text-align: justify;
-                font-size: 4vw;
-              }
-              span.prices {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                p.discountPrice {
-                  font-size: 4vw;
-                  font-weight: 700;
-                  color: blue;
-                }
-                p.mainPrice {
-                  font-size: 4vw;
-                  font-weight: 700;
-                  opacity: 0.7;
-                }
-              }
-            }
-          }
-          .cardSectionTwo {
             display: flex;
             flex-direction: column;
             row-gap: 2rem;
@@ -375,45 +290,45 @@ section {
           justify-content: space-between;
           width: 100%;
           align-items: center;
-         
-            .totalprice{
-                width: 50%;
-                padding: 8px 0px 8px 10px;
-                display: flex;
-                flex-direction: column;
-                background-color: white;
-                p {
-                    margin-block-start: 0.2em;
-                  }
-                  p.totalHeading {
-                    font-size: 3.5vw;
-                    font-weight: 600;
-                    text-align: left;
-                  }
-                  .totalanddisc{
-                    display: flex;
-                    align-items:center;
-                    column-gap: 1rem;
-                    p.discountTotalPrice {
-                        font-size: 4vw;
-                        font-weight: 700;
-                        -webkit-transform: scale(1, 1.4);
-                        -moz-transform: scale(1, 1.4);
-                        -o-transform: scale(1, 1.4);
-                        transform: scale(1, 1.4);
-                      }
-                     strike{
-                         color: red;
-                        p.mainTotalPrice {
-                            font-size: 3vw;
-                            margin-block-start: 0.5em;
-                            opacity: 0.7;
-                            font-weight: 700;
-                            color: red;
-                          }
-                     }
-                  }
+
+          .totalprice {
+            width: 50%;
+            padding: 8px 0px 8px 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            p {
+              margin-block-start: 0.2em;
             }
+            p.totalHeading {
+              font-size: 3.5vw;
+              font-weight: 600;
+              text-align: left;
+            }
+            .totalanddisc {
+              display: flex;
+              align-items: center;
+              column-gap: 1rem;
+              p.discountTotalPrice {
+                font-size: 4vw;
+                font-weight: 700;
+                -webkit-transform: scale(1, 1.4);
+                -moz-transform: scale(1, 1.4);
+                -o-transform: scale(1, 1.4);
+                transform: scale(1, 1.4);
+              }
+              strike {
+                color: red;
+                p.mainTotalPrice {
+                  font-size: 3vw;
+                  margin-block-start: 0.5em;
+                  opacity: 0.7;
+                  font-weight: 700;
+                  color: red;
+                }
+              }
+            }
+          }
           button.buynow {
             width: 50%;
             padding: 0;
@@ -422,7 +337,7 @@ section {
             color: white;
             font-size: 4.5vw;
             font-weight: 700;
-            background: #006FFF;
+            background: #006fff;
             border-radius: 0px;
           }
         }

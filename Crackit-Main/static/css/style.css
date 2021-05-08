@@ -3790,10 +3790,9 @@ section .myBag .bagItems .cards {
   display: flex;
   -webkit-column-gap: 3rem;
           column-gap: 3rem;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 section .myBag .bagItems .cards .cardSectionOne {
@@ -3802,6 +3801,12 @@ section .myBag .bagItems .cards .cardSectionOne {
   display: flex;
   -webkit-column-gap: 3rem;
           column-gap: 3rem;
+  row-gap: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 section .myBag .bagItems .cards .cardSectionOne .singleCard {
@@ -3867,75 +3872,13 @@ section .myBag .bagItems .cards .cardSectionOne .singleCard span.prices p.mainPr
   opacity: 0.7;
 }
 
-section .myBag .bagItems .cards .cardSectionTwo {
+section .myBag .bagItems .cards .singleCard:nth-child(3n-2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 3rem;
-          column-gap: 3rem;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 400px;
-  width: 200px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard p {
-  -webkit-margin-before: 0.5em;
-          margin-block-start: 0.5em;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard img.cross {
-  width: 20px;
-  height: auto;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard img.img {
-  width: 100%;
-  height: auto;
-  margin-top: 35px;
-  border-radius: 20px;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard p.desc {
-  text-align: justify;
-  font-size: 0.9vw;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.discountPrice {
-  font-size: 0.8vw;
-  font-weight: 700;
-  color: blue;
-}
-
-section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.mainPrice {
-  font-size: 0.8vw;
-  font-weight: 700;
-  opacity: 0.7;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 section .myBag hr {
@@ -4043,7 +3986,8 @@ section .myBag .bagTotal .total button.buynow {
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: black;
   }
-  section .myBag .heading span:before, section .myBag .heading span::after {
+  section .myBag .heading span:before,
+  section .myBag .heading span::after {
     background-color: #000;
     content: "";
     display: inline-block;
@@ -4145,72 +4089,6 @@ section .myBag .bagTotal .total button.buynow {
     font-weight: 700;
     opacity: 0.7;
   }
-  section .myBag .bagItems .cards .cardSectionTwo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    row-gap: 2rem;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 80%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard p {
-    -webkit-margin-before: 0.5em;
-            margin-block-start: 0.5em;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard img.cross {
-    width: 20px;
-    height: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard img.img {
-    width: 100%;
-    height: auto;
-    margin-top: 35px;
-    border-radius: 20px;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard p.desc {
-    text-align: justify;
-    font-size: 4vw;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.discountPrice {
-    font-size: 4vw;
-    font-weight: 700;
-    color: blue;
-  }
-  section .myBag .bagItems .cards .cardSectionTwo .singleCard span.prices p.mainPrice {
-    font-size: 4vw;
-    font-weight: 700;
-    opacity: 0.7;
-  }
   section .myBag hr {
     width: 95%;
     margin-left: auto;
@@ -4304,7 +4182,7 @@ section .myBag .bagTotal .total button.buynow {
     color: white;
     font-size: 4.5vw;
     font-weight: 700;
-    background: #006FFF;
+    background: #006fff;
     border-radius: 0px;
   }
 }
